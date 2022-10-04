@@ -1,0 +1,211 @@
+@charset "UTF-8";
+
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+	background-size: 400% 400%;
+	height: 100vh;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+/* 햄버거메뉴 */
+.menu-tab {
+    width: 80px;
+    height: 50px;
+    position: fixed;
+    z-index: 100;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+    transition: all 0.6s ease-in-out;
+    /*end of div*/
+}
+
+.menu-tab div {
+    width: 33px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: block;
+    margin: 5px 28px;
+    transition: all 0.6s ease-in-out;
+    border-radius: 5px;
+}
+
+.menu-tab div:nth-child(1) {
+    margin-top: 20px;
+}
+
+/*end of menu-tab*/
+.menu-tab.active {
+    left: 345px;
+    transition: all 600ms ease-in-out;
+}
+
+.menu-tab.active #one {
+    transform: translateY(9px) rotate(-135deg);
+    transition: all 0.6s ease-in-out;
+    background-color: #fff;
+}
+
+.menu-tab.active #two {
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.menu-tab.active #three {
+    transform: translateY(-9px) rotate(-45deg);
+    transition: all 0.6s ease-in-out;
+    background-color: #fff;
+}
+
+/* Left-Slide-menu */
+.menu-hide {
+    width: 310px;
+    left: -310px;
+    height: 100vh;
+    position: fixed;
+    z-index: 10;
+    top: 0px;
+    transition: all 0.6s ease-in-out;
+    /*end of nav*/
+}
+
+
+.menu-hide nav ul li {
+    height: 70px;
+    list-style-type: none;
+    text-align: center;
+    line-height: 70px;
+    transition: all 0.5s ease;
+}
+
+
+.menu-hide nav ul li a {
+    padding: 30px 130px;
+    text-decoration: none;
+    color: #f1f1f1;
+    font-weight: 800;
+}
+
+.menu-hide nav ul li a:hover{background-color: #000; opacity: 70%;}
+
+/*end of menu-hide*/
+.menu-hide.show {
+    left: 0px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.6s ease-in-out;
+}
+
+/* ------------------SECTION-0-HOME------------------ */
+
+#section0 div > img{position: relative; width: 100%; height: 100vh;}
+
+#section0 h1 > img{position: absolute; left: 700px; top: 200px; width: 500px; height: 500px;}
+
+#section0 h2 > img{position: absolute; right: 100px; top: 100px; width: 250px; height: 300px; opacity: 80%;}
+
+/*scroll-btn*/
+.scroll-btn {
+	width: 100px;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	position: absolute;
+    left: 50%;
+	bottom: 0;
+    margin-left:-75px;
+	text-align: center;
+	z-index: 100;
+
+}
+.scroll-btn p.text {text-align: center;font-size: 1vw !important;margin-bottom: 20px;}
+@keyframes ani-mouse {
+	0% {
+	opacity: 1;
+	top: 29%;
+	}
+	15% {
+	opacity: 1;
+	top: 50%;
+	}
+	50% {
+	opacity: 0;
+	top: 50%;
+	}
+	100% {
+	opacity: 0;
+	top: 29%;
+	}
+}
+.scroll-btn > * {
+	display: inline-block;
+	color: #7f8c8d;
+	color: #ffffff;
+	font-family: 'Helvetica-Light';
+	letter-spacing: 2px;
+}
+.scroll-btn > *:hover,
+.scroll-btn > *:focus,
+.scroll-btn > *.active {
+	color: rgb(0, 0, 0);
+}
+.scroll-btn > *:hover,
+.scroll-btn > *:focus,
+.scroll-btn > *:active,
+.scroll-btn > *.active {
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+.scroll-btn .mouse {
+	position: relative;
+	display: block;
+	width: 35px;
+	height: 55px;
+	margin: 0 auto 20px;
+	box-sizing: border-box;
+	border: 3px solid #fff;
+	border-radius: 23px;
+}
+.scroll-btn .mouse > * {
+	position: absolute;
+	display: block;
+	top: 29%;
+	left: 50%;
+	width: 8px;
+	height: 8px;
+	margin: -4px 0 0 -4px;
+	background: #fff;
+	border-radius: 50%;
+	animation: ani-mouse 2.5s linear infinite;
+}
+
+/* ------------------SECTION-1-RESPONSIVE------------------ */
+
+#section1 div > img{position: relative; width: 100%; height: 100vh;}
+
+#section1 nav{position: absolute;}
+
+/* ------------------SECTION-3-RESPONSIVE------------------ */
+
+#section3 div > img{position: relative; width: 100%; height: 100vh;}
+
+#section3 nav{position: absolute;}
+
+
+
+
+@media all and (min-width:768px){
+
+}
+
+
+@media all and (min-width:1200px){
+
+    /* ------------------[PC] SECTION-1-RESPONSIVE------------------ */
+    .none{display: block;}
+}
